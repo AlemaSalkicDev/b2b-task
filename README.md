@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# React app for B2B d.o.o.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application that can be run in two different ways:
 
-## Available Scripts
+1. Using **Node.js** and **npm**.
+2. Using **Docker**.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+Before running the app, make sure you have the following installed:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. **Node.js** and **npm**:
+- **Node.js version 22.9.0** (or compatible)
+- **npm version 10.9.0** (or compatible)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. **Docker**:
+- Ensure you have **Docker** installed on your machine.
 
-### `npm test`
+## Running the Application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can run the application using either of the following methods:
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Running with Node.js and npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Step 1: Clone the repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/AlemaSalkicDev/b2b-task.git
+cd your-repo
+```
 
-### `npm run eject`
+#### Step 2: Install dependencies
+Run the following command to install all the required dependencies for the project:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Step 3: Start the application
+Once the dependencies are installed, start the development server with the following command:
+```bash
+npm start
+```
+This will start the app, and you should be able to open it by visiting:
+```bash
+http://localhost:3000
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Running with Docker
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Step 1: Clone the repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/AlemaSalkicDev/b2b-task.git
+cd your-repo
+```
 
-## Learn More
+#### Step 2: Build the Docker image
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run the following command to build the Docker image:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+docker build -t react-app .
+```
 
-### Code Splitting
+#### Step 3: Run the Docker container
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Once the image is built, run the Docker container with the following command:
 
-### Analyzing the Bundle Size
+```bash
+docker run -p 3000:80 react-app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This will start the app, and you should be able to open it by visiting:
+```bash
+http://localhost:3000
+```
 
-### Making a Progressive Web App
+## Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- If you encounter any issues with Docker, ensure Docker is running and properly configured.
+- If the app does not open at `localhost:3000`, check if there are any errors in the terminal where you ran `npm start` or `docker run`.
