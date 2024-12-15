@@ -18,12 +18,14 @@ const Main = () => {
 
     const {data, error, isError} = useQuery({
         queryKey: ['data'],
-        queryFn: fetchData
+        queryFn: fetchData,
+        retry: 3,
     })
 
     const {data: columns, error: columnError, isError: isColumnError} = useQuery({
         queryKey: ['columns'],
-        queryFn: fetchColumns
+        queryFn: fetchColumns,
+        retry: 3,
     })
 
     useEffect(() => {
@@ -37,7 +39,7 @@ const Main = () => {
     }, [columns])
 
     useEffect(() => {
-        if(columns) {
+        if (columns) {
             setHiddenColumns(columns.filter((col) => !visibleColumns.includes(col)))
         }
     }, [columns, visibleColumns])
