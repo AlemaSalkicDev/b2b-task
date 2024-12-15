@@ -1,0 +1,41 @@
+.columnManager {
+    width: 250px;
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.hiddenColumn,
+.visibleColumn {
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 2px;
+    border: 2px solid;
+}
+
+.hiddenColumn {
+    border-color: red;
+}
+
+.visibleColumn {
+    border-color: green;
+}
+
+.hiddenContainer,
+.visibleContainer {
+    padding: 20px;
+    flex: 1 1 50%;
+}
+
+.visibleContainer {
+    border-top: 2px solid #e0e0e0;
+}
+
+@media(max-width: 720px) {
+    .columnManager {
+        display: flex;
+        flex: 0 0 160px;
+    }
+}

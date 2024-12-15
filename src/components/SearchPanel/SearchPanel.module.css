@@ -1,0 +1,25 @@
+.searchPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.panelText {
+    flex: 0 0 300px
+}
+
+@media (max-width: 720px) {
+    .searchPanel {
+        flex-direction: column;
+    }
+
+    .panelImage {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .panelText {
+        flex: 1
+    }
+}
